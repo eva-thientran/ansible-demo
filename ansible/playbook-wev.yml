@@ -1,0 +1,17 @@
+ - hosts: aws
+   become: true
+   vars:
+    ansistrano_deploy_from: "{{ playbook_dir }}/../web"
+    ansistrano_deploy_to: "/var/www"
+    ansistrano_keep_releases: 3
+    # There seems to be an issue with rsync in vagrant
+    ansistrano_deploy_via: copy
+  
+   roles:
+    - basics
+    - nginx
+    - php
+    - mariadb
+    - { role: carlosbuenosvinos.ansistrano-deploy }
+  
+  
