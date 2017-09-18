@@ -9,9 +9,10 @@
   
    roles:
     - basics
-    - nginx
-    - php
-    - mariadb
-    - { role: carlosbuenosvinos.ansistrano-deploy }
+    # - nginx
+    # - php
+    # - mariadb
+    - mongodb
+    #- { role: carlosbuenosvinos.ansistrano-deploy }
   
   
